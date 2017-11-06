@@ -1,0 +1,1 @@
+angular.module("couponAdmin", ["ui.router", 'ngCookies']) ;

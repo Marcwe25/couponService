@@ -1,0 +1,71 @@
+
+<div class="container-fluid">
+	<table class="table table-fixed table-hover">
+<!-- -------------table header---------- -->
+	<thead>
+		<tr>
+	<!-- 1- index	-->		<th class="col-xs-2"></th>
+	<!-- 2- id		-->		<th class="col-xs-1 editable" ng-click="listCtrl.setOrder('id')">ID</th>
+	<!-- 3- name	-->		<th class="col-xs-5 editable" ng-click="listCtrl.setOrder('custName')">NAME</th>
+	<!-- 4- coupons	-->		<th class="col-xs-4">COUPONS</th>
+	<!-- 5- delete	-->		<th class="col-xs-1"></th>
+		</tr>
+		
+<!-- ----------table filter------------------- -->
+		
+				<tr>
+	<!-- 1- index	-->		<th class="col-xs-2"></th>
+	<!-- 2- id		-->		<th class="col-xs-1"><input ng-model="listCtrl.companyFilter.id"
+														placeholder="by id"></th>
+	<!-- 3- name	-->		<th class="col-xs-5"><input ng-model="listCtrl.companyFilter.name"
+														placeholder="by name"></th>
+	<!-- 4- coupons	-->		<th class="col-xs-4"></th>
+	<!-- 5- delete	-->		<th class="col-xs-1"></th>
+		</tr>
+		
+		
+	</thead>
+	
+<!-- ----------table body------------------- -->
+
+			<tbody>	
+
+				<tr ng-repeat="	comp in listCtrl.dataArray 
+								| orderBy : listCtrl.order.by : listCtrl.order.upper 
+								| filter: {	id:listCtrl.companyFilter.id ,
+		    	 							custName:listCtrl.companyFilter.name}">
+				
+	<!-- 1- index	-->		<td class="col-xs-2">{{$index + 1}}</td>
+	
+	<!-- 2- id		-->		<td class="col-xs-1"><p>{{comp.id}}</p></td>
+	
+	<!-- 3- name	-->		<td class="col-xs-5"><p>{{comp.custName}}</p></td>
+	
+	<!-- 4- coupons	-->		<td  class="col-xs-4"><coupon-modal my-object="comp"></coupon-modal></td>
+	
+	<!-- 5- delete	-->		<td  class="col-xs-1"><button class="btn"
+										ng-click="listCtrl.remove(comp)">
+										X</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+<!-- ----------- create ---------------- -->
+
+	<div class="footWindow">
+
+		<input	class="footerElement"
+				placeholder="new customer name"
+				maxlength="20"
+				ng-model="listCtrl.newUser.newCustomer.custName">
+		<button	class="btn btn-info"
+				style="height:22px;line-height: 8px;margin-left:3px"
+				ng-click="listCtrl.create(listCtrl.newUser.newCustomer)">
+				CREATE</button>
+
+		<div	id="footer" class="alert alert-danger"
+				ng-show="listCtrl.error.isBad">
+				{{listCtrl.error.message}}
+		</div>
+	</div>

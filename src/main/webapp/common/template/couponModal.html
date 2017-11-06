@@ -1,0 +1,76 @@
+<button type="button"
+		class="btn btn-info btn-lg modalButton"
+		data-toggle="modal"
+		data-target="#myModal{{myObject.id}}"
+		ng-show="myObject.coupons.length>0">
+ 		coupons</button>
+
+
+
+<!-- --------- coupons modal------------- -->
+
+
+
+<div 	id="myModal{{myObject.id}}" class="modal fade couponModal"
+		role="dialog"
+		style="	padding-top: 4px;
+ 				padding-bottom: 4px;">
+	<div class="modal-dialog modal-lg">
+	
+		<!-- Modal content-->
+		<div class="modal-content">
+		
+			<div class="modal-header">
+				<h4 class="modal-title" ng-show="myObject.name.length>0">coupons for company: {{myObject.name}}</h4>
+				<h4 class="modal-title" ng-show="myObject.custName.length>0">coupons for customer: {{myObject.custName}}</h4>
+			</div>
+			
+			
+			<div class="modal-body">
+					<table>
+						<thead>
+							<tr>
+								<td>id</td>
+								<td>title</td>
+								<td>start_date</td>
+								<td>end_date</td>
+								<td ng-show="myObject.name.length>0">amount</td>
+								<td>type</td>
+								<td>message</td>
+								<td>price</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="coup in myObject.coupons">
+								<td>{{coup.id}}</td>
+								<td>{{coup.title}}</td>
+								<td>{{coup.start_date | date:'mediumDate'}}</td>
+								<td>{{coup.end_date | date:'mediumDate'}}</td>
+								<td ng-show="myObject.name.length>0">{{coup.amount}}</td>
+								<td>{{coup.type}}</td>
+								<td>{{coup.message}}</td>
+								<td>{{coup.price}}</td>
+							
+							</tr>
+						</tbody>
+					</table>
+			</div>
+				
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

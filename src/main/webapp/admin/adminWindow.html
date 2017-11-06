@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="couponAdmin">
+
+<head>
+    <title>COUPON SYSTEM : LOGED AS ADMINISTRATOR</title>
+	<link href="https://fonts.googleapis.com/css?family=Karla|Quicksand:700" rel="stylesheet">
+    <script src="../common/js/pub/popper.js"></script>
+    <script src="../common/js/pub/jquery-3.0.0.js"></script>
+    <script src="../common/js/pub/angular.js"></script>
+    <script src="../common/js/pub/angular-cookies.js"></script>
+    <script src="../common/js/pub/angular-ui-router.js"></script>
+    <script src="../common/js/pub/bootstrap.js"></script>
+    <script src="../common/js/angular-bootstrap.js"></script>
+	<script src="../common/js/service/couponFilter.srvc.js"></script>
+	<script src="../common/js/filter/misObject.filter.js"></script>
+	<script src="../common/js/filter/misDate.filter.js"></script>
+    <script src="../common/js/controller/order.ctrl.js"></script>
+    <script src="../common/js/controller/switch.ctrl.js"></script>
+	<script src="../common/js/service/login.srvc.js"></script>
+	<script src="../common/js/service/switchit.srvc.js"></script>
+	<script src="../common/js/service/order.srvc.js"></script>
+	<script src="../common/js/directive/fileInput.Directive.js"></script>
+	<script src="../common/js/service/upload.srvc.js"></script>
+	<script src="../common/js/service/post.srvc.js"></script>
+	<script src="../common/js/filter/lessThan.filter.js"></script>
+	<script src="../common/js/filter/allBut.filter.js"></script>
+	<script src="../common/js/filter/dateBefore.filter.js"></script>
+	<script src="../common/js/service/type.srvc.js"></script>
+	<script src="../common/js/controller/type.ctrl.js"></script>
+    <script src="../common/js/beans/company.js"></script>
+    <script src="../common/js/beans/customer.js"></script>
+    <script src="../common/js/beans/coupon.js"></script>
+    <script src="../common/js/directive/order.Directive.js"></script>
+    <script src="../common/js/directive/uploadButton.Directive.js"></script>
+    <script src="../common/js/directive/switch.Directive.js"></script>
+    <link  href="../common/css/pub/bootstrap.css" rel="stylesheet">
+    <link  href="../common/css/main.css" rel="stylesheet">
+    <script src="js/router.config.js"></script>
+    <script src="../common/js/service/checker.srvc.js"></script>
+    <script src="../common/js/service/get.srvc.js"></script>
+    <script src="../common/js/service/update.srvc.js"></script>
+    <script src="../common/js/service/updateAll.srvc.js"></script>
+    <script src="../common/js/service/remove.srvc.js"></script>
+    <script src="../common/js/service/create.srvc.js"></script>
+    <script src="../common/js/controller/list.ctrl.js"></script>
+    <script src="../common/js/directive/couponModal.Directive.js"></script>
+    <script src="../common/js/directive/imageModal.Directive.js"></script>
+   	<script src="../common/js/controller/file.ctrl.js"></script>
+    <script src="../common/js/controller/profile.ctrl.js"></script>
+    
+
+</head>
+
+<body  style="overflow-y: hidden">
+
+    <div ng-controller="typeCtrl as type" ng-init="type.setType('admin','mainAdmin')"
+    		style="overflow: hidden;
+				display: inline-block;
+				background-color: rgba(227, 232, 234, 0.65);
+				width: 120px ; height: 100vh;
+				vertical-align: top">
+        <a ng-click="type.setType('admin','company')" class="btn btn-info aButton" href="#/companiesView" style="margin-top: 50px">companie</a>
+        <a ng-click="type.setType('admin','customer')" class="btn btn-info aButton" href="#/customersView">customers</a>
+        <a ng-click="type.setType('admin','coupon')" class="btn btn-info aButton" href="#/couponsView">coupons</a>
+        <a class="btn btn-info aButton" ng-click="type.logout()">log out</a>
+    </div>
+    <div   style="display: inline-block; width: calc(100% - 150px); height: 100vh;  vertical-align: top ; top: 0" ui-view>
+
+    </div>
+</body>
+
+</html>

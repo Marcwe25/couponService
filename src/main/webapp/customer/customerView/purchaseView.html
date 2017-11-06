@@ -1,0 +1,194 @@
+<div class="container table-responsive">
+
+
+
+	<table class="table table-fixed table-hover">
+
+	<!-- --------------table header with filter---------- -->
+	
+		<thead>
+    			<tr>
+    <!--header filter 1 -->  			<th class="col-xs-1">
+  														<input 	style="100%"  
+  																ng-model="listCtrl.couponFilter.id"
+  																placeholder="ID" 
+  																class="ib">
+  										</th>
+      
+    <!--header filter 3 title -->  		
+    						<th class="col-xs-1">	<input 	style="100%"
+    														ng-model="listCtrl.couponFilter.title"
+															placeholder="TITLE">
+							</th>
+    <!--header filter 4 start_date--> 
+    						<th class="col-xs-2">
+    												<div style='position: relative'>
+    													<div 	
+    															class="fakePlaceholder">START DATE
+    													</div>
+    													<input 	type="date"
+    															ng-model="listCtrl.couponFilter.start_date"
+    															 class="only-arrow">
+    															<!--w137px" required -->
+    													</div>
+    					</th>
+    <!--header filter 5 end_date-->
+        	 			<th class="col-xs-2">
+													<div style='position: relative'>
+    													<div 	
+																class="fakePlaceholder">END DATE
+														</div>
+    													<input 	
+    															type="date"
+    															class="only-arrow"
+    															ng-model="listCtrl.couponFilter.end_date">
+    												</div>
+    					</th>
+    <!--header filter 6 amount-->
+    					<th class="col-xs-1">
+    												<div style='position: relative'>
+    													<div 	
+																class="fakePlaceholder2">AMOUNT
+														</div>
+    												<input 	style="width: 100%"
+    														ng-model="listCtrl.couponFilter.amount"
+    														placeholder="AMOUNT"
+    														class="ib">
+    												</div>
+    														
+    														
+    					</th>
+    <!--header filter 7 type-->  
+    					<th class="col-xs-1">
+    					
+    												<div style='position: relative'>
+    													<div 	
+																class="fakePlaceholder2">TYPE
+														</div>
+    												<select	ng-model="listCtrl.couponFilter.type"
+															placeholder="type"
+															required>
+							    							<option ng-repeat="type in listCtrl.couponType"
+																	value={{type}}>{{type}}</option>
+															<option value="" selected>-none-</option>
+							    					</select>
+    												</div>
+
+						</th>
+    <!--header filter 8 message-->
+    					<th class="col-xs-1">
+																	<div style='position: relative'>
+    													<div 	
+																class="fakePlaceholder2">MESSAGE
+														</div>
+    												<input 	style="width: 100%"
+    														ng-model="listCtrl.couponFilter.message"
+    														class="ib">
+    												</div>
+						</th>
+    <!--header filter 9 price-->  
+    					<th class="col-xs-1">			
+    												<div style='position: relative'>
+    													<div 	
+																class="fakePlaceholder2">PRICE
+														</div>
+    												<input 	style="width: 100%"
+    														ng-model="listCtrl.couponFilter.price"
+    														class="ib">
+    												</div>
+    												
+    										
+    					</th>
+    <!--header filter 10 image-->
+						<th class="col-xs-1">		<input 	style="width: 100%"
+															disabled
+    														placeholder="IMAGE"
+    														class="ib">
+    					</th>
+    <!--header filter 11 x-->  		
+    					<th class="col-xs-1">
+    									
+        				</th>
+    <!--header filter 12 edit-->	
+        
+    		</tr>
+<!-- ----------table header from/to------------------- -->
+
+
+		<tr class="low">
+
+  				
+  				
+  	<!-- 1 -->   			
+  	<!-- 2 id			--> <th class="col-xs-1"></th>
+    <!-- 3 title		--> <th class="col-xs-1" ></th>
+    <!-- 4 start_date	--> <th class="col-xs-2"><switchit title='start_date' ng-show="listCtrl.couponFilter.start_date|misObject"></switchit></th>
+    <!-- 5 end_date		--> <th class="col-xs-2"><switchit title='end_date' ng-show="listCtrl.couponFilter.end_date|misObject"></switchit></th>
+    <!-- 6 amount		--> <th class="col-xs-1"><switchit title='amount' ng-show="listCtrl.couponFilter.amount!=''"></switchit></th>
+    <!-- 7 type			--> <th class="col-xs-1"><switchit title='type' ng-show="listCtrl.couponFilter.type!=''"></switchit></th>
+    <!-- 8 message		--> <th class="col-xs-1"><div class="switchit" ng-show="listCtrl.couponFilter.message!=''"><p>{{listCtrl.couponFilter.message}}</p></div></th>
+    <!-- 9 price		-->	<th class="col-xs-1"><switchit title='price' ng-show="listCtrl.couponFilter.price!=''"></switchit></div></th>
+    <!-- 10 image		-->	<th class="col-xs-1"></th>
+    <!-- 11 x			-->	<th class="col-xs-1"></th>
+
+			    </tr>
+<!-- ----------table header order------------------- -->
+
+
+		<tr class="low">
+
+  				
+  				
+  	<!-- 1				-->	<th class="col-xs-1"><order title='id'></order></th>
+  	<!-- 2				-->  
+    <!-- 3 title		-->	<th class="col-xs-1"><order title='title'>		</order></th>
+    <!-- 4 start_date	-->	<th class="col-xs-2"><order title='start_date'>	</order></div></th>
+    <!-- 5 end_date		-->	<th class="col-xs-2"><order title='end_date'>	</order></div></th>
+    <!-- 6 amount		-->	<th class="col-xs-1"><order title='amount'>		</order></div></th>
+    <!-- 7 type			-->	<th class="col-xs-1"><order title='type'>		</order></div></th>
+    <!-- 8 message		-->	<th class="col-xs-1"><order title='message'>	</order></div></th>
+    <!-- 9 price		-->	<th class="col-xs-1"><order title='price'>		</order></div></th>
+    <!-- 10 image		-->	<th class="col-xs-1"><order title='image'>		</order></th>
+    <!-- 11 x			-->	<th class="col-xs-1"></th>
+
+			    </tr>
+			</thead>
+
+	<!-- --------------table body---------- -->
+	
+	<tbody class="tbody1">
+	
+    	<tr ng-repeat="item in listCtrl.dataArray 
+    					| orderBy : listCtrl.order.by : listCtrl.order.upper
+    					| filter:{	id:		listCtrl.couponFilter.id,
+    								title:	listCtrl.couponFilter.title,
+    								message:listCtrl.couponFilter.message
+    								}
+    					|allBut:'type':listCtrl
+    					|lessThan:'amount':listCtrl
+    					|lessThan:'price':listCtrl
+    					|dateBefore:'start_date':listCtrl
+    					|dateBefore:'end_date':listCtrl
+    					 track by $index" " >
+
+    <!-- 1 -->  <td class="col-xs-1"><p>{{item.id}}</p></td>
+    <!-- 2 -->  
+    <!-- 3 title-->  <td class="col-xs-1"><div data-toggle="tooltip" title="{{item.title}}">{{item.title}}</div></td>
+    <!-- 4 start_date-->  <td class="col-xs-2"><p>{{item.start_date | date:'mediumDate'}}</p></td>
+    <!-- 5 end_date-->  <td class="col-xs-2 editable"><p>{{item.end_date | date:'mediumDate'}}</p></td>
+    <!-- 6 amount-->  <td class="col-xs-1"><div>1</div></td>
+    <!-- 7 type-->  <td class="col-xs-1"><div>{{item.type}}</div></td>
+    <!-- 8 message-->  <td class="col-xs-1"><div data-toggle="tooltip" title="{{item.message}}">{{item.message}}</div></td>
+    <!-- 9 price-->  <td class="col-xs-1"><div>{{item.price}}</div></td>
+    <!-- 10image--> <td class="col-xs-1"><image-modal my-object="item"></image-modal></td>
+	<!-- 11 X--> <td class="col-xs-1"><button	class="btn col-xs-4 btn-info"
+            									ng-click="listCtrl.purchase(item)"
+            									style="width: 50px">
+            									buy</button></td>
+        		
+	<!-- 12 EDIT-->  
+		    </tr>
+		</tbody>
+	</table>
+
+

@@ -1,0 +1,80 @@
+.login_form {
+	background-color: white;
+	margin:0 auto ;
+	margin-top: 20vh;
+	padding: 24px 20px;
+	border: 3px solid #9e9e9e;
+	border-radius: 3%;
+	width: 30%;
+}
+
+input[type=submit].sButton {
+	background-color: #78d5ea;
+	height: 35px;
+}
+
+input[type=submit].sButton:disabled {
+	background-color: grey;
+	height: 35px;
+}
+input[type=text], input[type=password], input[type=submit], select,
+	button {
+	color: black;
+	width: 100%;
+	height: 30px;
+	background-color: #e0dede;
+	border-radius: 5px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	border: none;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+button {
+	margin-top: 20px;
+	height: 25px;
+}
+
+::-webkit-input-placeholder {
+	color: black;
+}
+
+.side {
+	width: calc(100% - 49px) !important;
+    min-width: 56px;
+}
+
+H1 {
+	text-align: center;
+	color: #4a4a4a;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	font-family: 'Karla', sans-serif;
+}
+.message {
+	color: red;
+	border-radius: 3px;
+	height: 26px;
+	line-height: 24px;
+	text-align: center;
+	font-family: 'Karla', sans-serif;
+}
+
+h2 {
+		color: #4a4a4a;
+		border-bottom: 1px solid #ccc;
+	    padding-bottom: 10px;
+	    font-weight: bold;
+	    font-size: 13px;
+	    margin-top: 0;
+}
+
+input:read-only { 
+    border: none;
+    background-color: rgba(81, 81, 81, 0);
+    }
+    
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}

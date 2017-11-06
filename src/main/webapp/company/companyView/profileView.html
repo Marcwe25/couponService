@@ -1,0 +1,55 @@
+<link href="../common/css/login.css" rel="stylesheet">
+<link href="../common/css/bgComp.css" rel="stylesheet">
+
+
+<div class="login_form">
+		<h2>NAME: {{profileCtrl.companyProfile[0].name}}</h2>
+	<form method="POST" action="http://localhost:8080/couponService/webapi/company/update">
+	<h2>EMAIL: <input 	class="side"
+						type="text"
+						maxlength="20"
+						ng-readonly="profileCtrl.edit"
+						ng-model="profileCtrl.companyProfile[0].email"
+						name="email"></h2>
+
+
+
+	<div ng-hide="profileCtrl.edit">
+	
+			<input 	type="password"
+					required
+					maxlength="10"
+					ng-model="profileCtrl.companyProfile[0].password"
+					placeholder="new password">
+					
+			<input	type="password"
+					required
+					maxlength="10"
+					ng-model="profileCtrl.companyProfile[0].confirmPassword"
+					placeholder="confirm password">
+			
+			<div style="width: 100% ;
+						text-align: center;">		
+			<button	type="button"
+					style="height: 35px; width: 45%"
+					class="sButton"
+					ng-click="profileCtrl.updateProfile(profileCtrl.companyProfile[0])"
+					ng-disabled="profileCtrl.companyProfile[0].password!==profileCtrl.companyProfile[0].confirmPassword">
+					submit</button>
+			<button	type="button"
+					style="height: 35px; width: 45%"
+					class="sButton"
+					ng-click="profileCtrl.cancel()">
+					cancel</button>
+			</div>
+			<div style="height: 30px">
+				<div 	class="message"
+						ng-show="profileCtrl.companyProfile[0].password!==profileCtrl.companyProfile[0].confirmPassword">
+				both password must match
+				</div>
+			</div>
+		</div>
+		</form>
+	<button ng-click="profileCtrl.makeEdit()" ng-show="profileCtrl.edit">EDIT</button>
+	</div>
+</div>

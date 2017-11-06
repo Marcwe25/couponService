@@ -1,0 +1,40 @@
+
+	
+	<button type="button"
+		ng-show="myObject.hasOwnProperty('image')"
+		ng-disabled="!myObject.hasOwnProperty('image')"
+		class="btn btn-info btn-lg modalButton"
+		data-toggle="modal"
+		data-target="#myModal{{myObject.id}}">
+ 		image</button>
+
+
+
+<!-- --------- coupons modal------------- -->
+
+
+
+<div 	id="myModal{{myObject.id}}" class="modal fade couponModal backTo100"
+		role="dialog"
+>
+	<div class="modal-dialog modal-lg"
+			style="max-width: 50%">
+	
+		<!-- Modal content-->
+		<div class="modal-content backTo100">
+
+			<div class="modal-body backTo100">
+			{{myObject.image}}<br>
+			<img style="width: 75%;
+						height: auto;"
+				ng-src="http://localhost:8080/couponService/webapi/file/{{myObject.image}}"
+				alt="no image to display" />
+			</div>
+				
+				<div class="modal-footer backTo100">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>

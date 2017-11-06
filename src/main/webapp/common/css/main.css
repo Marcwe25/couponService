@@ -1,0 +1,302 @@
+input[type="file"] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+input[type="file"] + label {
+	padding: 4px 11px;
+	cursor: pointer;
+    font-size: 1.25em;
+    color: white;
+    background-color: #5bc0de;
+    display: inline-block;
+    display: inline-block;
+    height: 34px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    width: 100%;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-radius: 6px;
+    
+}
+
+input[type="file"]:focus + label,
+input[type="file"] + label:hover {
+    background-color: #d5d5d5;
+    outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.aButton {
+
+    width: 80%;
+    height: 30px;
+    line-height: 15px;
+    margin: 5px 10px;
+    padding: 6px 0px
+}
+
+.low th{
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    height: 23px;
+}
+
+.editable {
+        cursor: pointer;
+}
+
+thead th, .tbody2 tr td{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	border: collapse;
+}
+           
+tbody{
+  background-color: #e5e5e5;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+thead {
+	font-family: 'Karla', sans-serif;
+    width: calc(100% - 15px);
+    height: 100px;
+}
+
+thead,tbody{
+    display:block;
+  }
+  
+p{
+	text-overflow: ellipsis;
+}
+
+.w137px {
+	width: 100%
+}
+
+.table-fixed{
+  width: 100%;
+	
+}
+.table-fixed  tbody{
+	height: calc(100vh - 193px);
+    width: 100%;
+    }
+    
+.modalButton{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	line-height: 21px;
+    width: 100% !important;
+    max-width: 88px;
+	
+}
+
+.backTo100{
+
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+	
+}
+
+.couponModal button{
+	background-color: #303030;
+    color: #5bc0de;
+}    
+    
+.couponModal table {
+
+	width: 100%;
+
+    }
+
+.couponModal table tbody{
+	height: auto !important;
+    width: auto !important;
+    display: table-header-group !important;
+    
+    }
+    
+.modal-body{
+	padding: 0;
+    margin: 15px;
+    overflow-x: scroll;
+}    
+ 
+.couponModal table td{
+	float: none !important;
+	padding-left: 10px;
+    }
+.couponModal table tr{
+    height: 33px !important;
+    }
+ 
+.couponModal table thead{
+	background-color: white !important;
+	display: table-header-group !important;
+    }
+
+.couponModal table thead tr{
+	background-color:  #5bc0de !important;
+    }
+ 
+    
+.editBTN {
+    width: 50px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 20px;
+    }
+
+tbody td{
+		float:left;
+		white-space: nowrap;
+		overflow: hidden;
+
+    }
+
+.tbody1 td div{
+			white-space: nowrap;
+		overflow: hidden;
+    	text-overflow: ellipsis;
+		max-width: 60px;
+}
+
+.pad1 {
+		padding-left: 1px !importanr;
+    	padding-right: 1px !important;
+}
+
+thead tr th{
+        float:left;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      
+switchit, order{
+	    cursor: pointer;
+}
+
+tbody tr:nth-of-type(odd) {
+  background-color: #d2d2d3;
+}
+
+.footWindow {
+	margin-left: 15px;
+	margin-top: -9px;
+	height: 73px;
+	position: relative;
+	overflow-y: hidden
+}
+
+.ib {
+	 display: inline-block;
+	 padding: 0;
+}
+
+.tbody2 {
+	overflow: hidden;	
+}
+
+#footer {
+   position:absolute;
+   width:100%;
+   height:19px;
+   bottom: -14px;
+   line-height: 9px;
+}
+
+.visOff {
+	display: none;
+}
+
+
+th input, th select, td input, td select{
+	width: 100%;
+    border: 1px solid #515151;
+    height: 32px;
+    padding: 3px !important;
+	margin: 0;
+	
+}
+
+.no-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.only-arrow::-webkit-inner-spin-button {
+/*	display: none;
+	-webkit-appearance: none;*/
+	width: 10px;
+	padding:0;
+	letter-spacing: 2px;
+	opacity: 1;
+	
+}
+
+.only-arrow::-webkit-calendar-picker-indicator {
+	opacity: 1;
+	color: #739099;
+}
+
+
+input::placeholder {
+    font-style: italic;
+    color : #739099;
+    }
+    
+.fakePlaceholder {
+	position: absolute;
+	top: 6px;
+	left: 2px;
+	display: block;
+	background-color: white;
+	width: calc(100% - 65px);
+	padding-left: 8px;
+	font-style: italic;
+    color : #739099;
+}
+.fakePlaceholder2 {
+	position: absolute;
+	top: 6px;
+	left: 2px;
+	display: block;
+	background-color: white;
+	width: calc(100% - 17px);
+	padding-left: 8px;
+	font-style: italic;
+    color : #739099;
+    pointer-events: none;
+    margin-left: 3px;
+    
+}
+
+switchit div p, .switchit p {
+	margin: 0 !important;
+	padding-left: 10px !important;
+	font-size: 14px !important;
+}
+
+order {
+	    text-align: center
+}
+
+input:disabled{
+	background: white;
+}
+
+input:read-only { 
+    border: none;
+    background-color: rgba(81, 81, 81, 0);
+    }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<Configuration> 
+  <Appenders> 
+    <Console name="STDOUT" target="SYSTEM_OUT"> 
+      <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/> 
+    </Console> 
+    <File name="fileLogger" fileName="log4j2_login.log" immediateFlush="true" append="true"> 
+      <PatternLayout pattern="%d %t %-5p %c{2} - %m%n"/> 
+    </File> 
+  </Appenders> 
+  <Loggers> 
+    <Root level="all"> 
+      <AppenderRef ref="STDOUT"/> 
+    </Root> 
+    <Logger name="cpFileLogger" level="trace"> 
+      <AppenderRef ref="fileLogger"/> 
+    </Logger> 
+  </Loggers> 
+</Configuration>
+
+ 

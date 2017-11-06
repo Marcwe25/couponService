@@ -1,0 +1,9 @@
+
+ <div ng-click="switchCtrl.switchIt(title)">
+<p ng-show="switchCtrl.cfSwitch[title] && !switchCtrl.likeDate(switchCtrl.couponFilter[title]) && title !=='type'">from&nbsp{{switchCtrl.couponFilter[title]}}</p>
+<p ng-show="!switchCtrl.cfSwitch[title] && !switchCtrl.likeDate(switchCtrl.couponFilter[title]) && title !=='type'">to&nbsp{{switchCtrl.couponFilter[title]}}</p>
+<p ng-show="switchCtrl.cfSwitch[title] && switchCtrl.likeDate(switchCtrl.couponFilter[title])">from&nbsp{{switchCtrl.couponFilter[title]|date:'mediumDate'}}</p>
+<p ng-show="!switchCtrl.cfSwitch[title] && switchCtrl.likeDate(switchCtrl.couponFilter[title])">to&nbsp{{switchCtrl.couponFilter[title]|date:'mediumDate'}}</p>
+<p ng-show="switchCtrl.cfSwitch[title] && title ==='type' && switchCtrl.couponFilter[title]!=null">is&nbsp{{switchCtrl.couponFilter[title]}}</p>
+<p ng-show="!switchCtrl.cfSwitch[title] && title ==='type' && switchCtrl.couponFilter[title]!=null">not&nbsp{{switchCtrl.couponFilter[title]}}</p>
+</div>
