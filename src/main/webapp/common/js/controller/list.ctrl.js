@@ -134,8 +134,5 @@ function listCtrlCtor(
    this.checkLogin();
    this.getData();
    $state.go(typeService.type.targetType);
-   
 }
-
-
 })();

@@ -4,95 +4,97 @@
 <div class="container-fluid">
 	<table class="table table-fixed table-hover">
 		<thead>
-		    <tr>
-	<!-- 1- index	-->	<th class="col-xs-1"></th>
-	<!-- 2- id	-->		<th class="col-xs-1 editable"
-							ng-click="listCtrl.setOrder('id')">ID</th>
-	<!-- 3- name	-->	<th class="col-xs-5 editable"
-							ng-click="listCtrl.setOrder('name')">NAME</th>
-	<!-- 4- email	-->	<th class="col-xs-3 editable"
-							ng-click="listCtrl.setOrder('email')">EMAIL</th>
-	<!-- 5- coupons	-->	<th	class="col-xs-2">COUPONS</th>
-	<!-- 6- delete	-->	<th	class="col-xs-2"><div></div></th>
-	
-			        
-		    </tr>
-		    
-<!-- ----------table filter------------------- -->
+			<tr>
+				<!-- 1- index	-->
+				<th class="col-xs-1"></th>
+				<!-- 2- id	-->
+				<th class="col-xs-1 editable" ng-click="listCtrl.setOrder('id')">ID</th>
+				<!-- 3- name	-->
+				<th class="col-xs-5 editable" ng-click="listCtrl.setOrder('name')">NAME</th>
+				<!-- 4- email	-->
+				<th class="col-xs-3 editable" ng-click="listCtrl.setOrder('email')">EMAIL</th>
+				<!-- 5- coupons	-->
+				<th class="col-xs-2">COUPONS</th>
+				<!-- 6- delete	-->
+				<th class="col-xs-2"><div></div></th>
 
-		    <tr>
-	<!-- 1- index	-->	<th class="col-xs-1"></th>
-	<!-- 2- id	-->		<th class="col-xs-1">
-							<input 	ng-model="listCtrl.companyFilter.id"
-									placeholder="by id"></th>
-	<!-- 3- name	-->	<th class="col-xs-5">
-							<input	ng-model="listCtrl.companyFilter.name"
-									placeholder="by name"></th>
-	<!-- 4- email	-->	<th class="col-xs-3">
-							<input 	ng-model="listCtrl.companyFilter.email"
-							 		placeholder="by email"></th>
-	<!-- 5- coupons	-->	<th	class="col-xs-2"></th>
-	<!-- 6- delete	-->	<th	class="col-xs-2"><div style="width: 35.34px;"></div></th>
-	
-	
-	
-	
-		    </tr>
+
+			</tr>
+
+			<!-- ----------table filter------------------- -->
+
+			<tr>
+				<!-- 1- index	-->
+				<th class="col-xs-1"></th>
+				<!-- 2- id	-->
+				<th class="col-xs-1"><input
+					ng-model="listCtrl.companyFilter.id" placeholder="by id"></th>
+				<!-- 3- name	-->
+				<th class="col-xs-5"><input
+					ng-model="listCtrl.companyFilter.name" placeholder="by name"></th>
+				<!-- 4- email	-->
+				<th class="col-xs-3"><input
+					ng-model="listCtrl.companyFilter.email" placeholder="by email"></th>
+				<!-- 5- coupons	-->
+				<th class="col-xs-2"></th>
+				<!-- 6- delete	-->
+				<th class="col-xs-2"><div style="width: 35.34px;"></div></th>
+
+
+
+
+			</tr>
 		</thead>
 
-<!-- ----------table body------------------- -->
+		<!-- ----------table body------------------- -->
 
-		<tbody>	
+		<tbody>
 
-		    <tr ng-repeat="comp in listCtrl.dataArray
+			<tr
+				ng-repeat="comp in listCtrl.dataArray
 		    	 | orderBy : listCtrl.order.by : listCtrl.order.upper 
 		    	 | filter: {id:listCtrl.companyFilter.id ,
 		    	 			name:listCtrl.companyFilter.name,
 		    	 			email:listCtrl.companyFilter.email}">
-<!-- 1- index	-->		<td class="col-xs-1">{{$index + 1}}</td>
-<!-- 2- id		-->		<td class="col-xs-1"><p>{{comp.id}}</p></td>
-<!-- 3- name	-->		<td class="col-xs-5"><p>{{comp.name}}</p></td>
-<!-- 4- email	-->		<td class="col-xs-3">
-		            		<input 	type="text"
-		            				ng-readonly = "!comp.edit"
-		            				ng-dblclick="listCtrl.edit(comp)" 
-		            				ng-blur="listCtrl.update(comp)"
-		            				ng-model="comp.email"
-									ng-keydown="$event.keyCode == 13 ? listCtrl.update(comp) : null"></td>
-<!-- 5- coupons	-->		<td class="col-xs-2"><coupon-modal my-object="comp"></coupon-modal></td>
-<!-- 6- delete	-->		<td class="col-xs-1">
-												<button class="btn"
-		            									ng-click="listCtrl.remove(comp)">
-		            									X</button></td>
+				<!-- 1- index	-->
+				<td class="col-xs-1">{{$index + 1}}</td>
+				<!-- 2- id		-->
+				<td class="col-xs-1"><p>{{comp.id}}</p></td>
+				<!-- 3- name	-->
+				<td class="col-xs-5"><p>{{comp.name}}</p></td>
+				<!-- 4- email	-->
+				<td class="col-xs-3"><input type="text"
+					ng-readonly="!comp.edit" ng-dblclick="listCtrl.edit(comp)"
+					ng-blur="listCtrl.update(comp)" ng-model="comp.email"
+					ng-keydown="$event.keyCode == 13 ? listCtrl.update(comp) : null"></td>
+				<!-- 5- coupons	-->
+				<td class="col-xs-2"><coupon-modal my-object="comp"></coupon-modal></td>
+				<!-- 6- delete	-->
+				<td class="col-xs-1">
+					<button class="btn" ng-click="listCtrl.remove(comp)">X</button>
+				</td>
 
-		    </tr>
+			</tr>
 		</tbody>
 	</table>
 </div>
-	
+
 <!-- ----------- create row---------------- -->
-	
-	<div 	class="footWindow"  
-			ng-show="listCtrl.createMode()">
-			
-		<input	class="footerElement"
-				ng-model="listCtrl.newUser.newCompany.name"
-				maxlength="20"
-				placeholder="new company name">
-		<input	class="footerElement"
-				ng-model="listCtrl.newUser.newCompany.email"
-				placeholder="new company email"
-				maxlength="20">
-				
-		<button class="btn btn-info"
-				style="height:22px;line-height: 8px;margin-left:3px"
-				ng-click="listCtrl.create(listCtrl.newUser.newCompany)">
-				CREATE</button>
-		
-		<div 	id="footer" class="alert alert-danger"
-				ng-show="listCtrl.error.isBad">
-	    		{{listCtrl.error.message}}
-	  	</div>
-	</div >
- 
- 
+
+<div class="footWindow" ng-show="listCtrl.createMode()">
+
+	<input class="footerElement"
+		ng-model="listCtrl.newUser.newCompany.name" maxlength="20"
+		placeholder="new company name"> <input class="footerElement"
+		ng-model="listCtrl.newUser.newCompany.email"
+		placeholder="new company email" maxlength="20">
+
+	<button class="btn btn-info"
+		style="height: 22px; line-height: 8px; margin-left: 3px"
+		ng-click="listCtrl.create(listCtrl.newUser.newCompany)">
+		CREATE</button>
+
+	<div id="footer" class="alert alert-danger"
+		ng-show="listCtrl.error.isBad">{{listCtrl.error.message}}</div>
+</div>
+

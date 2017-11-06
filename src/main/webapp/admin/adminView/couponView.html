@@ -1,164 +1,179 @@
 <div class="container table-responsive">
 	<table class="table table-fixed table-hover">
 
-	<!-- --------------table header with filter---------- -->
-	
+		<!-- --------------table header with filter---------- -->
+
 		<thead>
-    			<tr>
-    <!--header filter 1 -->  <th class="col-xs-1">
-    <!--header filter 2 -->										
-  														<input 	style="100%"  
-  																ng-model="listCtrl.couponFilter.id"
-  																placeholder="ID" 
-  																class="ib">
-  												
-  							</th>
-      
-    <!--header filter 3 title -->  		
-    						<th class="col-xs-1">	<input 	style="100%"
-    														ng-model="listCtrl.couponFilter.title"
-															placeholder="TITLE">
-							</th>
-    <!--header filter 4 start_date--> 
-    						<th class="col-xs-2">
-    												<div style='position: relative'>
-	    												<div class="fakePlaceholder">START DATE</div>
-	    												<input 	type="date"
-	    														ng-model="listCtrl.couponFilter.start_date"
-	    														class="only-arrow">
-    												</div>
-    					</th>
-    <!--header filter 5 end_date-->
-        	 			<th class="col-xs-2">
-													<div style='position: relative'>
-    													<div class="fakePlaceholder">END DATE</div>
-    													<input	type="date"
-    															class="only-arrow"
-    															ng-model="listCtrl.couponFilter.end_date">
-    												</div>
-    					</th>
-    <!--header filter 6 amount-->
-    					<th class="col-xs-1">
-    												<div style='position: relative'>
-    													<div class="fakePlaceholder2">AMOUNT</div>
-	    												<input 	style="width: 100%"
-	    														ng-model="listCtrl.couponFilter.amount"
-	    														placeholder="AMOUNT"
-	    														class="ib">
-    												</div>
-    														
-    														
-    					</th>
-    <!--header filter 7 type-->  
-    					<th class="col-xs-1">
-    					
-    												<div style='position: relative'>
-    													<div class="fakePlaceholder2">TYPE</div>
-	    												<select	ng-model="listCtrl.couponFilter.type"
-																placeholder="type"
-																required>
-								    							<option ng-repeat="type in listCtrl.couponType"
-																		value={{type}}>{{type}}</option>
-																<option value="" selected>-none-</option>
-								    					</select>
-    												</div>
+			<tr>
+				<!--header filter 1 -->
+				<th class="col-xs-1">
+					<!--header filter 2 --> <input style=""
+					ng-model="listCtrl.couponFilter.id" placeholder="ID" class="ib">
 
-						</th>
-    <!--header filter 8 message-->
-    					<th class="col-xs-1">
-													<div style='position: relative'>
-    													<div class="fakePlaceholder2">MESSAGE</div>
-	    												<input 	style="width: 100%"
-	    														ng-model="listCtrl.couponFilter.message"
-	    														class="ib">
-    												</div>
-						</th>
-    <!--header filter 9 price-->  
-    					<th class="col-xs-1">			
-    												<div style='position: relative'>
-    													<div class="fakePlaceholder2">PRICE</div>
-	    												<input 	style="width: 100%"
-	    														ng-model="listCtrl.couponFilter.price"
-	    														class="ib">
-    												</div>
-    												
-    										
-    					</th>
-    <!--header filter 10 image-->
-						<th class="col-xs-1">		<input 	style="width: 100%"
-															disabled
-    														placeholder="IMAGE"
-    														class="ib">
-    					</th>
-    <!--header filter 11 delete-->  		
-    					<th class="col-xs-1">
-    									<div class="col-xs-4"></div>
-									    <div class="col-xs-8">
-						    				<div	ng-show="!listCtrl.allMode()"
-													style="width: 74px;">
-											</div>
-						       				<div	style="color: red ; width: 74px;"
-													ng-show="listCtrl.allMode()"
-													ng-click="listCtrl.updateArray()">
-													APPLY ALL
-											</div>
-						        		</div>
-        				</th>
-    <!--header filter 12 edit-->	
-        
-    		</tr>
-    		
-<!-- ----------table header from/to------------------- -->
+				</th>
+
+				<!--header filter 3 title -->
+				<th class="col-xs-1"><input style=""
+					ng-model="listCtrl.couponFilter.title" placeholder="TITLE">
+				</th>
+				<!--header filter 4 start_date-->
+				<th class="col-xs-2">
+					<div style='position: relative'>
+						<div class="fakePlaceholder">START DATE</div>
+						<input type="date" ng-model="listCtrl.couponFilter.start_date"
+							class="only-arrow">
+					</div>
+				</th>
+				<!--header filter 5 end_date-->
+				<th class="col-xs-2">
+					<div style='position: relative'>
+						<div class="fakePlaceholder">END DATE</div>
+						<input type="date" class="only-arrow"
+							ng-model="listCtrl.couponFilter.end_date">
+					</div>
+				</th>
+				<!--header filter 6 amount-->
+				<th class="col-xs-1">
+					<div style='position: relative'>
+						<div class="fakePlaceholder2">AMOUNT</div>
+						<input style="width: 100%" ng-model="listCtrl.couponFilter.amount"
+							placeholder="AMOUNT" class="ib">
+					</div>
 
 
-		<tr class="low">
+				</th>
+				<!--header filter 7 type-->
+				<th class="col-xs-1">
 
-  				
-  				
-  	<!-- 1 -->   			
-  	<!-- 2 id			--> <th class="col-xs-1"></th>
-    <!-- 3 title		--> <th class="col-xs-1" ></th>
-    <!-- 4 start_date	--> <th class="col-xs-2"><switchit title='start_date' ng-show="listCtrl.couponFilter.start_date|misObject"></switchit></th>
-    <!-- 5 end_date		--> <th class="col-xs-2"><switchit title='end_date' ng-show="listCtrl.couponFilter.end_date|misObject"></switchit></th>
-    <!-- 6 amount		--> <th class="col-xs-1"><switchit title='amount' ng-show="listCtrl.couponFilter.amount!=''"></switchit></th>
-    <!-- 7 type			--> <th class="col-xs-1"><switchit title='type' ng-show="listCtrl.couponFilter.type!=''"></switchit></th>
-    <!-- 8 message		--> <th class="col-xs-1"><div class="switchit" ng-show="listCtrl.couponFilter.message!=''"><p>{{listCtrl.couponFilter.message}}</p></div></th>
-    <!-- 9 price		-->	<th class="col-xs-1"><switchit title='price' ng-show="listCtrl.couponFilter.price!=''"></switchit></div></th>
-    <!-- 10 image		-->	<th class="col-xs-1"></th>
-    <!-- 11 delete		-->	<th class="col-xs-1"></th>
+					<div style='position: relative'>
+						<div class="fakePlaceholder2">TYPE</div>
+						<select ng-model="listCtrl.couponFilter.type" placeholder="type"
+							required>
+							<option ng-repeat="type in listCtrl.couponType" value={{type}}>{{type}}</option>
+							<option value="" selected>-none-</option>
+						</select>
+					</div>
 
-			    </tr>
-			    
-<!-- ----------table header order------------------- -->
+				</th>
+				<!--header filter 8 message-->
+				<th class="col-xs-1">
+					<div style='position: relative'>
+						<div class="fakePlaceholder2">MESSAGE</div>
+						<input style="width: 100%"
+							ng-model="listCtrl.couponFilter.message" class="ib">
+					</div>
+				</th>
+				<!--header filter 9 price-->
+				<th class="col-xs-1">
+					<div style='position: relative'>
+						<div class="fakePlaceholder2">PRICE</div>
+						<input style="width: 100%" ng-model="listCtrl.couponFilter.price"
+							class="ib">
+					</div>
 
 
-		<tr class="low">
+				</th>
+				<!--header filter 10 image-->
+				<th class="col-xs-1"><input style="width: 100%" disabled
+					placeholder="IMAGE" class="ib"></th>
+				<!--header filter 11 delete-->
+				<th class="col-xs-1">
+					<div class="col-xs-4"></div>
+					<div class="col-xs-8">
+						<div ng-show="!listCtrl.allMode()" style="width: 74px;"></div>
+						<div style="color: red; width: 74px;" ng-show="listCtrl.allMode()"
+							ng-click="listCtrl.updateArray()">APPLY ALL</div>
+					</div>
+				</th>
+				<!--header filter 12 edit-->
 
-  				
-  				
-  	<!-- 1				-->	<th class="col-xs-1">
-								<order title='id'></order>
-  							</th>
-  	<!-- 2				-->  
-    <!-- 3 title		-->	<th class="col-xs-1"><order title='title'>		</order></th>
-    <!-- 4 start_date	-->	<th class="col-xs-2"><order title='start_date'>	</order></div></th>
-    <!-- 5 end_date		-->	<th class="col-xs-2"><order title='end_date'>	</order></div></th>
-    <!-- 6 amount		-->	<th class="col-xs-1"><order title='amount'>		</order></div></th>
-    <!-- 7 type			-->	<th class="col-xs-1"><order title='type'>		</order></div></th>
-    <!-- 8 message		-->	<th class="col-xs-1"><order title='message'>	</order></div></th>
-    <!-- 9 price		-->	<th class="col-xs-1"><order title='price'>		</order></div></th>
-    <!-- 10 image		-->	<th class="col-xs-1"><order title='image'>		</order></th>
-    <!-- 11 delete		-->	<th class="col-xs-1"></th>
+			</tr>
 
-			    </tr>
-			</thead>
+			<!-- ----------table header from/to------------------- -->
 
-	<!-- --------------table body---------- -->
-	
-	<tbody class="tbody1">
-	<!-- --------defining ng-repeat-------- -->
-	
-    	<tr ng-repeat="comp in listCtrl.dataArray
+
+			<tr class="low">
+
+
+
+				<!-- 1 -->
+				<!-- 2 id			-->
+				<th class="col-xs-1"></th>
+				<!-- 3 title		-->
+				<th class="col-xs-1"></th>
+				<!-- 4 start_date	-->
+				<th class="col-xs-2"><switchit title='start_date'
+						ng-show="listCtrl.couponFilter.start_date|misObject"></switchit></th>
+				<!-- 5 end_date		-->
+				<th class="col-xs-2"><switchit title='end_date'
+						ng-show="listCtrl.couponFilter.end_date|misObject"></switchit></th>
+				<!-- 6 amount		-->
+				<th class="col-xs-1"><switchit title='amount'
+						ng-show="listCtrl.couponFilter.amount!=''"></switchit></th>
+				<!-- 7 type			-->
+				<th class="col-xs-1"><switchit title='type'
+						ng-show="listCtrl.couponFilter.type!=''"></switchit></th>
+				<!-- 8 message		-->
+				<th class="col-xs-1"><div class="switchit"
+						ng-show="listCtrl.couponFilter.message!=''">
+						<p>{{listCtrl.couponFilter.message}}</p>
+					</div></th>
+				<!-- 9 price		-->
+				<th class="col-xs-1"><switchit title='price'
+						ng-show="listCtrl.couponFilter.price!=''"></switchit>
+					</div></th>
+				<!-- 10 image		-->
+				<th class="col-xs-1"></th>
+				<!-- 11 delete		-->
+				<th class="col-xs-1"></th>
+
+			</tr>
+
+			<!-- ----------table header order------------------- -->
+
+
+			<tr class="low">
+
+
+
+				<!-- 1				-->
+				<th class="col-xs-1"><order title='id'></order></th>
+				<!-- 2				-->
+				<!-- 3 title		-->
+				<th class="col-xs-1"><order title='title'> </order></th>
+				<!-- 4 start_date	-->
+				<th class="col-xs-2"><order title='start_date'> </order>
+					</div></th>
+				<!-- 5 end_date		-->
+				<th class="col-xs-2"><order title='end_date'> </order>
+					</div></th>
+				<!-- 6 amount		-->
+				<th class="col-xs-1"><order title='amount'> </order>
+					</div></th>
+				<!-- 7 type			-->
+				<th class="col-xs-1"><order title='type'> </order>
+					</div></th>
+				<!-- 8 message		-->
+				<th class="col-xs-1"><order title='message'> </order>
+					</div></th>
+				<!-- 9 price		-->
+				<th class="col-xs-1"><order title='price'> </order>
+					</div></th>
+				<!-- 10 image		-->
+				<th class="col-xs-1"><order title='image'> </order></th>
+				<!-- 11 delete		-->
+				<th class="col-xs-1"></th>
+
+			</tr>
+		</thead>
+
+		<!-- --------------table body---------- -->
+
+		<tbody class="tbody1">
+			<!-- --------defining ng-repeat-------- -->
+
+			<tr
+				ng-repeat="comp in listCtrl.dataArray
     					| orderBy : listCtrl.order.by : listCtrl.order.upper
     					| filter:{	id:		listCtrl.couponFilter.id,
     								title:	listCtrl.couponFilter.title,
@@ -169,122 +184,114 @@
     					|lessThan:'price':listCtrl
     					|dateBefore:'start_date':listCtrl
     					|dateBefore:'end_date':listCtrl
-    					 track by $index" >
+    					 track by $index">
 
-    <!-- 1			 -->  
-    <!-- 2 id		 -->  <td class="col-xs-1"><p>{{comp.id}}</p></td>
-    <!-- 3 title	 -->  <td class="col-xs-1"><div  data-toggle="tooltip" title="{{comp.title}}">{{comp.title}}</div></td>
-    <!-- 4 start_date-->  <td class="col-xs-2"><p>{{comp.start_date | date:'mediumDate'}}</p></td>
-    <!-- 5 end_date	 -->  <td class="col-xs-2 editable">
-    								<input 	type="date"
-    										required="required"
-											ng-readonly="!comp.edit" 
-						            		ng-model="comp.end_date"></td>
-    								
-    <!-- 6 amount	 -->  <td class="col-xs-1"><div>{{comp.amount}}</div></td>
-    <!-- 7 type		 -->  <td class="col-xs-1"><div>{{comp.type}}</div></td>
-    <!-- 8 message	 -->  <td class="col-xs-1"><div data-toggle="tooltip" title="{{comp.message}}">{{comp.message}}</div></td>
-    <!-- 9 price	 -->  <td class="col-xs-1 editable">
-					    			<input 	type="number" 
-					    					ng-readonly="!comp.edit" 
-							            	ng-model="comp.price"></td>
-    <!-- 10image	--> <td class="col-xs-1"><image-modal my-object="comp"></image-modal></td>
-    
-	<!-- 11 delete	--> <td class="col-xs-1"><button	class="btn col-xs-4"
-            									ng-click="listCtrl.remove(comp)">
-            									X</button>
-			            						<p class="col-xs-8">
-												<button ng-show="!comp.edit"
-														ng-click="listCtrl.edit(comp)"
-														class="btn btn-info editBTN"
-														>
-														EDIT</button>
-							        			<button ng-show="comp.edit"
-														ng-click="listCtrl.update(comp)"
-														class="btn btn-info editBTN"
-														>
-														APPLY</button>
-												</p>				
-            			</td>
-        		
-	<!-- 12 EDIT-->  
-		    </tr>
+				<!-- 1			 -->
+				<!-- 2 id		 -->
+				<td class="col-xs-1"><p>{{comp.id}}</p></td>
+				<!-- 3 title	 -->
+				<td class="col-xs-1"><div data-toggle="tooltip"
+						title="{{comp.title}}">{{comp.title}}</div></td>
+				<!-- 4 start_date-->
+				<td class="col-xs-2"><p>{{comp.start_date |
+						date:'mediumDate'}}</p></td>
+				<!-- 5 end_date	 -->
+				<td class="col-xs-2 editable"><input type="date"
+					required="required" ng-readonly="!comp.edit"
+					ng-model="comp.end_date"></td>
+
+				<!-- 6 amount	 -->
+				<td class="col-xs-1"><div>{{comp.amount}}</div></td>
+				<!-- 7 type		 -->
+				<td class="col-xs-1"><div>{{comp.type}}</div></td>
+				<!-- 8 message	 -->
+				<td class="col-xs-1"><div data-toggle="tooltip"
+						title="{{comp.message}}">{{comp.message}}</div></td>
+				<!-- 9 price	 -->
+				<td class="col-xs-1 editable"><input type="number"
+					ng-readonly="!comp.edit" ng-model="comp.price"></td>
+				<!-- 10image	-->
+				<td class="col-xs-1"><image-modal my-object="comp"></image-modal></td>
+
+				<!-- 11 delete	-->
+				<td class="col-xs-1"><button class="btn col-xs-4"
+						ng-click="listCtrl.remove(comp)">X</button>
+					<p class="col-xs-8">
+						<button ng-show="!comp.edit" ng-click="listCtrl.edit(comp)"
+							class="btn btn-info editBTN">EDIT</button>
+						<button ng-show="comp.edit" ng-click="listCtrl.update(comp)"
+							class="btn btn-info editBTN">APPLY</button>
+					</p></td>
+
+				<!-- 12 EDIT-->
+			</tr>
 		</tbody>
 	</table>
 
 
-		<!--  ------create coupon row--------- -->
+	<!--  ------create coupon row--------- -->
 
-<div 	class="footWindow"  style="margin-left: 0;"
+	<div class="footWindow" style="margin-left: 0;"
 		ng-show="listCtrl.createMode()">
-    	<table>
-    		<tbody class="tbody2">
-    			
-    		      <tr>
-    <!-- 3	title		-->	<td class="col-xs-1"><input		ng-model="listCtrl.newUser.newCoupon.title"
-    														required
-    														maxlength="30"
-															placeholder="title"></td>
-															
-    <!-- 4	start date	-->	<td class="col-xs-2">
-											<div style='position: relative'>
-    													<div 	ng-hide="(listCtrl.newUser.newCoupon.start_date|misObject)"
-    															class="fakePlaceholder">start date
-    													</div>
-    													<input 	type="date"
-    															required
-    															ng-model="listCtrl.newUser.newCoupon.start_date" >
-    															<!-- class="only-arrow w137px" required -->
-    										</div>
-															
-															
-    <!-- 5	end	date	-->	<td class="col-xs-2">
-    										<div style='position: relative'>
-    													<div 	ng-hide="(listCtrl.newUser.newCoupon.end_date|misObject)"
-    															class="fakePlaceholder">end date
-    													</div>
-    													<input 	type="date"
-    															required
-    															ng-model="listCtrl.newUser.newCoupon.end_date" >
-    															<!-- class="only-arrow w137px" required -->
-    										</div>	
-															
-															
-															
-    <!-- 6	amount		-->	<td class="col-xs-1"><input	type="number"
-    														ng-model="listCtrl.newUser.newCoupon.amount"
-															placeholder="amount"
-															required></td>    
-    <!-- 7	type		-->	<td class="col-xs-1"><select	ng-model="listCtrl.newUser.newCoupon.type"
-															placeholder="new type"
-															required>
-															<option value="" disabled selected hidden>type</option>
-							    							<option ng-repeat="type in listCtrl.couponType"
-																	value={{type}}>{{type}}</option>
-							    					</select>
-    					</td>
-    <!-- 8 	message		-->	<td class="col-xs-1"><input		ng-model="listCtrl.newUser.newCoupon.message"
-															placeholder="message"
-															maxlength="100"></td>
-															
-    <!-- 9 	price		-->	<td class="col-xs-1"><input		ng-model="listCtrl.newUser.newCoupon.price"
-															placeholder="price"
-															type="number"
-															required></td>
-    <!-- 10	image	-->	<td class="col-xs-1"><upload-it></upload-it></td>
-    <!-- 11	create	--> <td class="col-xs-1"><button 	class="btn btn-info"ng-click="listCtrl.create(listCtrl.newUser.newCoupon)"
-    														style="	width: 100%;margin:0;border-radius: 6px;">
-    														create</button></td>
-    
-    
-					</tr>
-				</tbody>
-    		<table>
+		<table>
+			<tbody class="tbody2">
 
-		<div id="footer" class="alert alert-danger" ng-show="listCtrl.error.isBad">
-			{{listCtrl.error.message}}
-  		</div>
-</div >
-</table>
+				<tr>
+					<!-- 3	title		-->
+					<td class="col-xs-1"><input
+						ng-model="listCtrl.newUser.newCoupon.title" required
+						maxlength="30" placeholder="title"></td>
 
- 
+					<!-- 4	start date	-->
+					<td class="col-xs-2">
+						<div style='position: relative'>
+							<div ng-hide="(listCtrl.newUser.newCoupon.start_date|misObject)"
+								class="fakePlaceholder">start date</div>
+							<input type="date" required
+								ng-model="listCtrl.newUser.newCoupon.start_date">
+							<!-- class="only-arrow w137px" required -->
+						</div> <!-- 5	end	date	-->
+					<td class="col-xs-2">
+						<div style='position: relative'>
+							<div ng-hide="(listCtrl.newUser.newCoupon.end_date|misObject)"
+								class="fakePlaceholder">end date</div>
+							<input type="date" required
+								ng-model="listCtrl.newUser.newCoupon.end_date">
+							<!-- class="only-arrow w137px" required -->
+						</div> <!-- 6	amount		-->
+					<td class="col-xs-1"><input type="number"
+						ng-model="listCtrl.newUser.newCoupon.amount" placeholder="amount"
+						required></td>
+					<!-- 7	type		-->
+					<td class="col-xs-1"><select
+						ng-model="listCtrl.newUser.newCoupon.type" placeholder="new type"
+						required>
+							<option value="" disabled selected hidden>type</option>
+							<option ng-repeat="type in listCtrl.couponType" value={{type}}>{{type}}</option>
+					</select></td>
+					<!-- 8 	message		-->
+					<td class="col-xs-1"><input
+						ng-model="listCtrl.newUser.newCoupon.message"
+						placeholder="message" maxlength="100"></td>
+
+					<!-- 9 	price		-->
+					<td class="col-xs-1"><input
+						ng-model="listCtrl.newUser.newCoupon.price" placeholder="price"
+						type="number" required></td>
+					<!-- 10	image	-->
+					<td class="col-xs-1"><upload-it></upload-it></td>
+					<!-- 11	create	-->
+					<td class="col-xs-1"><button class="btn btn-info"
+							ng-click="listCtrl.create(listCtrl.newUser.newCoupon)"
+							style="width: 100%; margin: 0; border-radius: 6px;">
+							create</button></td>
+
+
+				</tr>
+			</tbody>
+			<table>
+
+				<div id="footer" class="alert alert-danger"
+					ng-show="listCtrl.error.isBad">{{listCtrl.error.message}}</div>
+				</div>
+			</table>
