@@ -2,9 +2,13 @@
 
 var module = angular.module("couponAdmin");
 
+// service used to hold data from page
 module.service("typeService", typeServiceCtor);
 
-function typeServiceCtor($http,$injector) {
+function typeServiceCtor(
+							/*DEPDENCY INJECTION*/
+							$http,
+							$injector) {
 	var self		= this;
 	this.client		= {profile:{}};
 	this.types		= ["coupon","customer","company","purchase","profile"];
@@ -13,6 +17,7 @@ function typeServiceCtor($http,$injector) {
 	this.newUser	= {	newCompany: new Company('','',''), 
 						newCustomer: new Customer('','',''),
 						newCoupon: new Coupon('','','','','','','','')};
+	
 	this.resetNewUser = function(){
 						this.newUser.newCompany		= new Company('','','');
 						this.newUser.newCustomer	= new Customer('','','');

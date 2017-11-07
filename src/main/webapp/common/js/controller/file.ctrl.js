@@ -5,8 +5,11 @@ module.controller("fileCtrl", fileCtrlCtor)
 
 //controller used for uploading
 //image with fileInput directive
-function fileCtrlCtor(uploadService,$scope) {
+function fileCtrlCtor(
+						/*DEPDENCY INJECTION*/
+						uploadService,$scope) {
 
+//	used to upload file
 	$scope.uploadFile = function(item){
 		uploadService.doPost(item);
 	}

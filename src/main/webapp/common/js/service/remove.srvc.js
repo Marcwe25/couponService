@@ -3,9 +3,15 @@
 
 var module = angular.module("couponAdmin");
 
+// service used to remove record from database
 module.service("removeService", removeServiceCtor);
 
-function removeServiceCtor($http,getterService,typeService,loginService) {
+function removeServiceCtor(
+							/*DEPDENCY INJECTION*/
+							$http,
+							getterService,
+							typeService,
+							loginService) {
 	var self = this;
 	
     this.remove = function(data){

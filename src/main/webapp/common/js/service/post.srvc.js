@@ -1,8 +1,13 @@
 (function(){var module = angular.module("couponAdmin");
 
+// service to send AJAX POST request
 module.service("postService", postServiceCtor);
 
-function postServiceCtor($http,typeService,getterService) {
+function postServiceCtor(
+							/*DEPDENCY INJECTION*/
+							$http,
+							typeService,
+							getterService) {
 	
     this.doPost = function(item){
  

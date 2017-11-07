@@ -3,9 +3,16 @@
 	
 var module = angular.module("couponAdmin");
 
+// service use to create an item on the database
 module.service("createService", createServiceCtor);
 
-function createServiceCtor($http,getterService,typeService,checkerService,loginService) {
+function createServiceCtor(
+							/*DEPDENCY INJECTION*/
+							$http,
+							getterService,
+							typeService,
+							checkerService,
+							loginService) {
 	var self		= this;
 	this.type		= typeService.type;
 
@@ -16,7 +23,7 @@ function createServiceCtor($http,getterService,typeService,checkerService,loginS
     	if(checkerService.error.isBad){
     		return;
     	}
-    	//process data
+    	// send ajax request with data to be created
     	$http.post("http://localhost:8080/couponService/webapi/"+this.type.clientType+"/"+this.type.targetType,item).then(
 				function(promise){
 					if(promise.status=='201'){

@@ -142,6 +142,11 @@ public class CustomerRessource implements Serializable  {
 		return ResponseUtility.myResponse(customerID(fa) + "-deleteCoupon id: " + Long.toString(couponID)  ,Status.OK);
 	}
 	
+
+	/**
+	 * @param webCoupon
+	 * @return Response indicating success of the purchase
+	 */
 	@POST
 	@Path("/purchase")
 	public Response purchaseWebCoupon(WebCoupon webCoupon){

@@ -130,7 +130,9 @@ function listCtrlCtor(
 	   loginService.check();
    }
    
-// initialization task   
+//	--------------------------
+//	--- INITIALIZATION TASK --
+//	--------------------------
    this.checkLogin();
    this.getData();
    $state.go(typeService.type.targetType);
